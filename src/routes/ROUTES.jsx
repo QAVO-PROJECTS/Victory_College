@@ -1,6 +1,8 @@
 import MainPage from "../pages/index.jsx";
 import ProtectedRoute from "../ProtectedRoute.jsx";
 import AdminPage from "../components/AdminComponents/AdminPage/index.jsx";
+import HomePage from "../pages/UserPages/HomePage/index.jsx";
+import FormPage from "../pages/UserPages/FormPage/index.jsx";
 
 
 const router = [
@@ -8,8 +10,14 @@ const router = [
         path: '/',
         element: <MainPage/>,
         children: [
-
-
+            {
+                path:"/",
+                element: <HomePage/>,
+            },
+            {
+                path: "/form",
+                element: <FormPage/>
+            }
         ]
     },
     {

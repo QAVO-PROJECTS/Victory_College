@@ -7,7 +7,7 @@ function AdminPage() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        Cookies.remove('klinikenToken');
+        Cookies.remove('victoryToken');
         navigate('/');
     };
 
