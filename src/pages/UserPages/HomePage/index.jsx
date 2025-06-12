@@ -12,6 +12,7 @@ function HomePage() {
             <HomeStudents/>
             <HomeAdvantage/>
             <TestimonialSlider/>
+
         </div>
     );
 }

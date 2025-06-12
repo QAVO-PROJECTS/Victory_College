@@ -7,14 +7,40 @@ function FormBanner() {
     return (
         <div id={"form-page"}>
             <div className={"topBar"}>
-                <p>Təhsil bir fürsət deyil, bir seçimdir – onu indi et.</p>
+                <svg
+                    className="wave-svg"
+                    width="600"
+                    height="50"
+                    viewBox="0 0 380 50"
+                    xmlns="http://www.w3.org/2000/svg"
+
+                >
+                    <defs>
+                        <path
+                            id="wavePathTopBar"
+                            d="M 0,40
+               Q 50,40 100,25
+               T 220,25,
+               T 350,40,
+               T 450 ,20"
+                        />
+                    </defs>
+                    <text fill="white" fontSize="16" fontWeight="500" style={{textAlign: "center"}}>
+                        <textPath href="#wavePathTopBar" startOffset="0" >
+                            Təhsil bir fürsət deyil, bir seçimdir – onu indi et.
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+            <div className={"container"}>
+                <div className={"back"} onClick={()=>navigate("/")}>
+                    <img src={back}/>
+                </div>
             </div>
             <div className={"ellips"}>
                 <img src={ellips} alt="Ellipse1"/>
             </div>
-            <div className={"back"} onClick={()=>navigate("/")}>
-                <img src={back}/>
-            </div>
+
             <div className={'container'}>
                 <div className={"header"}>
                     <h2>Victory Colleges-də biz sadəcə dərs demirik – yol göstərir, potensialı kəşf edir və gələcək

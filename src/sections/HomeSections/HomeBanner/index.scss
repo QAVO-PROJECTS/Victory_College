@@ -70,7 +70,7 @@
     }
     .icon2{
       position: absolute;
-      right: 400px;
+      right: 350px;
       top: 100px;
     }
     .icon3{
@@ -155,9 +155,11 @@
       }
 
       .ring-text {
-        fill: white;
-        font-size: 16px;
+        fill: #E4FF9E;
+        font-size: 20px;
+        letter-spacing: 8px;
         font-weight: 500;
+        margin-bottom: 5px;
       }
     }
   }

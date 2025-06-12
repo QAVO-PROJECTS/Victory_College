@@ -3,6 +3,8 @@ import ProtectedRoute from "../ProtectedRoute.jsx";
 import AdminPage from "../components/AdminComponents/AdminPage/index.jsx";
 import HomePage from "../pages/UserPages/HomePage/index.jsx";
 import FormPage from "../pages/UserPages/FormPage/index.jsx";
+import AdminContact from "../pages/AdminPages/AdminContact/index.jsx";
+import AdminLogin from "../pages/AdminPages/AdminLogin/index.jsx";
 
 
 const router = [
@@ -28,13 +30,16 @@ const router = [
             </ProtectedRoute>
         ),
         children: [
-
+            {
+                path: "/admin/contact",
+                element: <AdminContact/>
+            }
         ]
     },
-    // {
-    //   path: "/login",
-    //   element: <AdminLogin/>
-    // },
+    {
+      path: "/login",
+      element: <AdminLogin/>
+    },
     // {
     //     path: "*",
     //     element: <NotFound/>
