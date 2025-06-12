@@ -3,9 +3,15 @@
   background: white;
   position: relative;
   z-index: 10;
+  @media screen and (max-width: 576px) {
+    padding: 50px 16px;
+  }
   .head{
     text-align: center;
     margin-bottom: 70px;
+    @media screen and (max-width: 576px){
+      margin-bottom: 30px;
+    }
     h3{
       color: #141414;
       text-align: center;
@@ -33,6 +39,23 @@
     margin: 0 auto;
     @media screen and (max-width: 576px) {
       width: 100%;
+      font-size: 16px;
+    }
+  }
+  .cards{
+    margin-bottom: 90px;
+    @media screen and (max-width: 576px) {
+      margin-bottom: 30px;
+    }
+  }
+  .row{
+    @media screen and (max-width: 576px) {
+      &:nth-child(2) {
+        flex-direction: column-reverse; // İkinci row üçün tərsinə çevir
+      }
+      .col-6{
+        padding: 8px 0;
+      }
     }
   }
 }

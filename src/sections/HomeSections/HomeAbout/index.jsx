@@ -10,6 +10,7 @@ function HomeAbout() {
                 <div className={"row"}>
                     <div className={"col-6 col-md-12 col-sm-12 col-xs-12"}>
                         <div className={"image"}>
+                            <h3>Bir Addımda Təhsil İmkanını Yaxala!</h3>
                             <img src={image}/>
                         </div>
                     </div>

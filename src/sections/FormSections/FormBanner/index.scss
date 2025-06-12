@@ -1,4 +1,4 @@
-#form-page {
+#formBanner {
   position: relative;
 
   .topBar {
@@ -11,6 +11,7 @@
     margin-bottom: 50px;
     @media screen and (max-width: 576px){
       margin-bottom: 35px;
+      height: 55px;
     }
   }
 
@@ -25,6 +26,9 @@
     img {
       width: 100%;
       height: 100%;
+    }
+    @media screen and (max-width: 576px){
+      display: none;
     }
   }
 
@@ -52,12 +56,18 @@
     .icon1 {
       position: absolute;
       left: -90px;
+      @media  screen and (max-width: 576px) {
+        display: none;
+      }
     }
 
     .icon2 {
       position: absolute;
       bottom: 0;
-      right: -90px;
+      right: 0;
+      @media  screen and (max-width: 576px) {
+        display: none;
+      }
     }
   }
 

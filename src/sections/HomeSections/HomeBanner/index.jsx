@@ -1,35 +1,40 @@
 import './index.scss'
 import ellips from "/src/assets/Ellipse1.png"
 import poster from '/src/assets/Rectangle 20.png'  // slider-dən çəkdiyin screenshot
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function HomeBanner() {
     const [playing, setPlaying] = useState(false)
+    const [isMobile, setIsMobile] = useState(false);
+
+    // update on mount + on resize
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth <= 576);
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
+
+    // choose offsets
+    const topOffset    = isMobile ? "42%" : "0";
+    const headerOffset = isMobile ? "50%" : "0";
+    const anchor       = isMobile ? "middle" : "start";
+    const size = isMobile ? "48px" : "32px"
     return (
         <div id={"homeBanner"}>
             <div className={"topBar"}>
-                <svg
-                    className="wave-svg"
-                    width="600"
-                    height="50"
-                    viewBox="0 0 380 50"
-                    xmlns="http://www.w3.org/2000/svg"
-
-                >
+                <svg className="wave-svg" width="100%" height="50" viewBox="0 0 380 50">
                     <defs>
                         <path
                             id="wavePathTopBar"
-                            d="M 0,40
-               Q 50,40 100,25
-               T 220,25,
-               T 350,40,
-               T 450 ,20"
+                            d="M 0,20 Q 50,24 100,30 T 220,32 T 350,15 T 450,32"
                         />
                     </defs>
-                    <text fill="white" fontSize="16" fontWeight="500" style={{textAlign: "center", width: '100%'}}>
-                        <textPath href="#wavePathTopBar" startOffset="0" style={{
-                            marginLeft: 50,
-                        }}>
+                    <text fill="white" fontSize="16" fontWeight="500" textAnchor={anchor}>
+                        <textPath
+                            href="#wavePathTopBar"
+                            startOffset={topOffset}
+                        >
                             Təhsil bir fürsət deyil, bir seçimdir – onu indi et.
                         </textPath>
                     </text>
@@ -44,25 +49,18 @@ function HomeBanner() {
                         <h1>
                             Biliklə Yönəldilən Həyat, İlhamla Dolu Gələcək
                         </h1>
-                        <svg
-                            className="wave-svg"
-                            width="900"
-                            height="120"
-                            viewBox="0 0 1200 120"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
+                        <svg className="wave-svg" width="100%" height="120" viewBox="0 0 1200 120">
                             <defs>
                                 <path
                                     id="wavePath"
-                                    d="M 0,60
-               Q 150,60 250,20
-               T 450,60
-               T 900,80
-               T 1200,80"
+                                    d="M 0,60 Q 150,60 250,20 T 450,60 T 900,60 T 1200,40"
                                 />
                             </defs>
-                            <text fill="#458DC8" fontSize="32" fontWeight="500">
-                                <textPath href="#wavePath" startOffset="0">
+                            <text fill="#458DC8" fontSize={size} fontWeight="500" textAnchor={anchor}>
+                                <textPath
+                                    href="#wavePath"
+                                    startOffset={headerOffset}
+                                >
                                     Hər Yeni Bilgi Səni Bir Addım Daha Özünə Yaxınlaşdırır
                                 </textPath>
                             </text>
@@ -167,16 +165,12 @@ function HomeBanner() {
                                         />
                                     </defs>
 
-                                    {/* Xarici ən nazik halqa */}
-                                    <circle cx="120" cy="120" r="100" className="ring-outer" fill="none" />
+                                    <circle cx="120" cy="120" r="90" className="ring-outer" fill="none" />
 
-                                    {/* Orta, çox yüngül şəffaf halqa */}
-                                    <circle cx="120" cy="120" r="80" className="ring-mid" fill="none" />
+                                    <circle cx="120" cy="120" r="70" className="ring-mid" fill="none" />
 
-                                    {/* Daxili, daha qabarıq şəffaf halqa */}
-                                    <circle cx="120" cy="120" r="60" className="ring-inner" fill="none" />
+                                    <circle cx="120" cy="120" r="50" className="ring-inner" fill="none" />
 
-                                    {/* Əyri yazı */}
                                     <text className="ring-text">
                                         <textPath href="#ringPath" startOffset="0%">
                                             Videomuzu izlə

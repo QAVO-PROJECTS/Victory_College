@@ -125,6 +125,86 @@ const testimonials = [
            həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
            və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
     },
+     {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    }, {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    }, {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    }, {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    }, {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    }, {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    }, {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    }, {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    }, {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    }, {
+        name: 'Aytac M',
+        country: 'Azərbaycan',
+        img: image,
+        text: `Victory Colleges-də SAT hazırlığına başladıqdan sonra həm düşüncə tərzim,
+           həm də test strategiyalarım tamamilə dəyişdi. Müəllimlərin yanaşması fərdi idi
+           və zəif tərəflərim üzərində xüsusi işlədilər. Nəticədə 1400+ bal topladım!.`
+    },
+
+
+
+
+
+
+
+
+
 
 
     /* …add as many as you need… (at least 10 for the full arc) */
@@ -154,6 +234,9 @@ export default function TestimonialSlider() {
 
     return (
         <section className="testimonial-slider">
+            <div className={'headerr'}>
+                Rəylər
+            </div>
             <h2 className="slider-title">Tələbələrimiz Nə Deyir</h2>
             <p className="slider-sub">
                 Xidmətimizin Səviyyəsi Və Təqdim Etdiyimiz Keyfiyyət Barədə Real Müştəri Rəyləri

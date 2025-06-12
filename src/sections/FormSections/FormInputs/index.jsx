@@ -5,7 +5,7 @@ import frame2 from '/src/assets/Frame50Blue.png';
 import image from '/src/assets/2e3a97a1912299a934a643055768d2db1138202b.png';
 import { usePostFormsMutation } from '../../../services/userApi.jsx';
 import showToast from "../../../components/ToastMessage.js";
-
+import back from "/src/assets/Circles.png"
 function FormInput() {
     const [postForms] = usePostFormsMutation();
 
@@ -140,6 +140,7 @@ function FormInput() {
                 <div className="row">
                     <div className="col-2 col-md-12 col-sm-12 col-xs-12">
                         <div className="image">
+                            <h2>Təhsildə Zəmanət, Gələcəkdə Uğur!</h2>
                             <img src={image} alt="decoration" />
                         </div>
                     </div>
@@ -155,6 +156,9 @@ function FormInput() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className={"back"}>
+                <img src={back}/>
             </div>
         </div>
     );

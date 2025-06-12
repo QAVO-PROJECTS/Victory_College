@@ -6,7 +6,7 @@ import HomeAdvantage from "../../../sections/HomeSections/HomeAdvantage/index.js
 import TestimonialSlider from "../../../components/Slider/index.jsx";
 function HomePage() {
     return (
-        <div>
+        <div className={"home_page"}>
             <HomeBanner />
             <HomeAbout/>
             <HomeStudents/>

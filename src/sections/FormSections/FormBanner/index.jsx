@@ -2,31 +2,37 @@ import './index.scss'
 import ellips from "../../../assets/Ellipse1.png";
 import back from "/src/assets/Frame1703876719.png"
 import {useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 function FormBanner() {
     const navigate = useNavigate();
-    return (
-        <div id={"form-page"}>
-            <div className={"topBar"}>
-                <svg
-                    className="wave-svg"
-                    width="600"
-                    height="50"
-                    viewBox="0 0 380 50"
-                    xmlns="http://www.w3.org/2000/svg"
+    const [isMobile, setIsMobile] = useState(false);
 
-                >
+    // update on mount + on resize
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth <= 576);
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
+
+    // choose offsets
+    const topOffset    = isMobile ? "42%" : "0";
+    const anchor       = isMobile ? "middle" : "start";
+    return (
+        <div id={"formBanner"}>
+            <div className={"topBar"}>
+                <svg className="wave-svg" width="100%" height="50" viewBox="0 0 380 50">
                     <defs>
                         <path
                             id="wavePathTopBar"
-                            d="M 0,40
-               Q 50,40 100,25
-               T 220,25,
-               T 350,40,
-               T 450 ,20"
+                            d="M 0,20 Q 50,24 100,30 T 220,32 T 350,15 T 450,32"
                         />
                     </defs>
-                    <text fill="white" fontSize="16" fontWeight="500" style={{textAlign: "center"}}>
-                        <textPath href="#wavePathTopBar" startOffset="0" >
+                    <text fill="white" fontSize="16" fontWeight="500" textAnchor={anchor}>
+                        <textPath
+                            href="#wavePathTopBar"
+                            startOffset={topOffset}
+                        >
                             Təhsil bir fürsət deyil, bir seçimdir – onu indi et.
                         </textPath>
                     </text>

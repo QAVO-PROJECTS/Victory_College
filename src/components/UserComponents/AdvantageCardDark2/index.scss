@@ -1,13 +1,12 @@
-#advantageCardWhite{
+#advantageCardDark2{
   padding: 46px 32px;
   border-radius: 13px;
-  background: #FFF;
-  box-shadow: 0px -1px 0.3px 0px rgba(185, 185, 185, 0.25), 0px 1px 6.5px 0px rgba(151, 146, 146, 0.25);
+  background: #35384C;
   display: flex;
   gap: 35px;
   @media screen and (max-width: 576px){
     align-items: center;
-    padding: 28px;
+    padding: 28px 28px 28px 28px;
     gap: 0;
   }
   .content{
@@ -22,7 +21,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 16px;
-        background: #35384C;
+        background: #C5E081;
         @media screen and (max-width: 576px){
           margin-top: 7px;
           width: 24px;
@@ -31,12 +30,13 @@
       }
       p{
         width: 80%;
+        color: #FFF;
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
-        line-height: 27px; /* 168.75% */
+        line-height: 27px;
         @media screen and (max-width: 576px){
-          font-size:14px;
+            font-size:14px;
         }
       }
       &:nth-child(1){
@@ -48,13 +48,11 @@
   .image{
     width: 80px;
     height: 80px;
-    @media screen and (max-width: 576px){
-      width: 70px !important;
-    }
     img{
       width: 100%;
       height: 100%;
       object-fit: contain;
+
     }
   }
 }
