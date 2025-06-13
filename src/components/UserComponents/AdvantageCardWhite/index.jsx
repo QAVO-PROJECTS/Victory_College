@@ -1,7 +1,7 @@
 import "./index.scss"
 function AdvantageCardWhite({ img, desc1, desc2 }) {
     return (
-        <div className={'col-6 col-md-12 col-sm-12 col-xs-12'}>
+        <div >
             <div id={"advantageCardWhite"}>
                 <div className={"content"}>
                     <div className={"text"}>

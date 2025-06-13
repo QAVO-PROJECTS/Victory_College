@@ -1,22 +1,28 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './index.scss';
+
 import frame from '/src/assets/Frame50.png';
 import frame2 from '/src/assets/Frame50Blue.png';
 import image from '/src/assets/2e3a97a1912299a934a643055768d2db1138202b.png';
+import back from "/src/assets/Circles.png";
+
 import { usePostFormsMutation } from '../../../services/userApi.jsx';
 import showToast from "../../../components/ToastMessage.js";
-import back from "/src/assets/Circles.png"
+
 function FormInput() {
     const [postForms] = usePostFormsMutation();
-
-    // form fields state
     const [fullName, setFullName] = useState('');
     const [classNumber, setGrade] = useState('');
     const [phoneNumber, setContactNumber] = useState('');
     const [parentFullName, setParentName] = useState('');
     const [parentPhoneNumber, setParentContact] = useState('');
 
-    // clear all inputs
+    useEffect(() => {
+        AOS.init({ duration: 600, once: true });
+    }, []);
+
     const clearForm = () => {
         setFullName('');
         setGrade('');
@@ -25,10 +31,8 @@ function FormInput() {
         setParentContact('');
     };
 
-    // submit as FormData
-    const handleSubmit = async (e) => {
+    const handleSubmit = async e => {
         e.preventDefault();
-
         const data = new FormData();
         data.append('fullName', fullName);
         data.append('classNumber', classNumber);
@@ -38,26 +42,26 @@ function FormInput() {
 
         try {
             await postForms(data).unwrap();
-            showToast("Müraciət uğurlu oldu","success")
+            showToast("Müraciət uğurlu oldu", "success");
             clearForm();
         } catch (err) {
-            console.error('Submission error:', err);
-            showToast("Müraciət uğursuz oldu","error")
+            console.error(err);
+            showToast("Müraciət uğursuz oldu", "error");
         }
     };
 
     return (
         <div id="form-input">
             <div className="container">
-                <form className="form-input" onSubmit={handleSubmit}>
+                <form
+                    className="form-input"
+                    onSubmit={handleSubmit}
+                    data-aos="fade-right"
+                >
                     <div className="form-group">
-                        <div className="forms">
-                            <div className="frame">
-                                <img src={frame} alt="frame" />
-                            </div>
-                            <label>
-                                Ad, Soyad <span>*</span>
-                            </label>
+                        <div className="forms" data-aos="fade-up" data-aos-delay="100">
+                            <div className="frame"><img src={frame} alt="frame" /></div>
+                            <label>Ad, Soyad <span>*</span></label>
                             <input
                                 type="text"
                                 value={fullName}
@@ -66,13 +70,9 @@ function FormInput() {
                             />
                         </div>
 
-                        <div className="forms">
-                            <div className="frame2">
-                                <img src={frame2} alt="frame blue" />
-                            </div>
-                            <label>
-                                Neçənci sinifdə təhsil alırsınız? <span>*</span>
-                            </label>
+                        <div className="forms" data-aos="fade-up" data-aos-delay="200">
+                            <div className="frame2"><img src={frame2} alt="frame blue" /></div>
+                            <label>Neçənci sinifdə təhsil alırsınız? <span>*</span></label>
                             <input
                                 type="text"
                                 value={classNumber}
@@ -81,13 +81,9 @@ function FormInput() {
                             />
                         </div>
 
-                        <div className="forms">
-                            <div className="frame">
-                                <img src={frame} alt="frame" />
-                            </div>
-                            <label>
-                                Əlaqə nömrəniz <span>*</span>
-                            </label>
+                        <div className="forms" data-aos="fade-up" data-aos-delay="300">
+                            <div className="frame"><img src={frame} alt="frame" /></div>
+                            <label>Əlaqə nömrəniz <span>*</span></label>
                             <input
                                 type="tel"
                                 value={phoneNumber}
@@ -96,13 +92,9 @@ function FormInput() {
                             />
                         </div>
 
-                        <div className="forms">
-                            <div className="frame2">
-                                <img src={frame2} alt="frame blue" />
-                            </div>
-                            <label>
-                                Valideynin adı və soyadı <span>*</span>
-                            </label>
+                        <div className="forms" data-aos="fade-up" data-aos-delay="400">
+                            <div className="frame2"><img src={frame2} alt="frame blue" /></div>
+                            <label>Valideynin adı və soyadı <span>*</span></label>
                             <input
                                 type="text"
                                 value={parentFullName}
@@ -111,13 +103,9 @@ function FormInput() {
                             />
                         </div>
 
-                        <div className="forms">
-                            <div className="frame">
-                                <img src={frame} alt="frame" />
-                            </div>
-                            <label>
-                                Valideynin əlaqə nömrəsi <span>*</span>
-                            </label>
+                        <div className="forms" data-aos="fade-up" data-aos-delay="500">
+                            <div className="frame"><img src={frame} alt="frame" /></div>
+                            <label>Valideynin əlaqə nömrəsi <span>*</span></label>
                             <input
                                 type="tel"
                                 value={parentPhoneNumber}
@@ -127,24 +115,39 @@ function FormInput() {
                         </div>
                     </div>
 
-                    <div className="buttons">
-                        <button type="button" className="clear" onClick={clearForm}>
+                    <div
+                        className="buttons"
+                        data-aos="fade-up"
+                        data-aos-delay="600"
+                    >
+                        <button
+                            type="button"
+                            className="clear"
+                            onClick={clearForm}
+                        >
                             Formu təmizləyin
                         </button>
-                        <button type="submit" className="submit">
+                        <button
+                            type="submit"
+                            className="submit"
+                        >
                             Təqdim edin
                         </button>
                     </div>
                 </form>
 
-                <div className="row">
-                    <div className="col-2 col-md-12 col-sm-12 col-xs-12">
+                <div
+                    className="row"
+                    data-aos="fade-left"
+                    data-aos-delay="300"
+                >
+                    <div className="col-2 col-md-12">
                         <div className="image">
                             <h2>Təhsildə Zəmanət, Gələcəkdə Uğur!</h2>
                             <img src={image} alt="decoration" />
                         </div>
                     </div>
-                    <div className="col-9 col-md-12 col-sm-12 col-xs-12">
+                    <div className="col-9 col-md-12">
                         <div className="content">
                             <h2>Təhsildə Zəmanət, Gələcəkdə Uğur!</h2>
                             <p>
@@ -157,8 +160,13 @@ function FormInput() {
                     </div>
                 </div>
             </div>
-            <div className={"back"}>
-                <img src={back}/>
+
+            <div
+                className="back"
+                data-aos="fade-in"
+                data-aos-delay="700"
+            >
+                <img src={back} alt="background circles" />
             </div>
         </div>
     );
