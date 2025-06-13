@@ -131,10 +131,16 @@ function HomeBanner() {
                     </div>
                 </div>
                 <div className="video-wrapper">
-                    {!playing
-                        ? <img className="video-poster" src={poster} alt="Video poster" />
-                        : <video className="video-player" src="/src/assets/1422633-hd_1920_810_24fps.mp4" controls autoPlay />
-                    }
+                    {playing
+                         ? <video
+                                 className="video-player"
+                                 src="/src/assets/1422633-hd_1920_810_24fps.mp4"
+                                 controls
+                                 autoPlay
+                                 onEnded={() => setPlaying(false)}
+                               />
+                             : <img className="video-poster" src={poster} alt="Video poster" />
+                   }
 
                     {!playing && (
                         <>
