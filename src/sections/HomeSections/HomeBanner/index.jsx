@@ -1,12 +1,23 @@
 import './index.scss'
 import ellips from "/src/assets/Ellipse1.png"
 import poster from '/src/assets/Rectangle 20.png'  // slider-dən çəkdiyin screenshot
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import video from "/src/assets/1422633-hd_1920_810_24fps.mp4"
+import gsap from "gsap";
 function HomeBanner() {
     const [playing, setPlaying] = useState(false)
     const [isMobile, setIsMobile] = useState(false);
+    const textPathRef = useRef(null);
 
+    useEffect(() => {
+        gsap.to(textPathRef.current, {
+            attr: { startOffset: "100%" },
+            duration: 8,      // 0→100% üçün 5s
+            ease: "none",
+            repeat: -1,       // limitsiz təkrarlama
+            yoyo: true        // hər dövrdən sonra irəli→geri
+        });
+    }, []);
     // update on mount + on resize
     useEffect(() => {
         const check = () => setIsMobile(window.innerWidth <= 576);
@@ -51,17 +62,18 @@ function HomeBanner() {
                         </h1>
                         <svg className="wave-svg" width="100%" height="120" viewBox="0 0 1200 120">
                             <defs>
-                                <path
-                                    id="wavePath"
-                                    d="M 0,60 Q 150,60 250,20 T 450,60 T 900,60 T 1200,40"
-                                />
+                                <path id="wavePath" d="M 0,60 Q 150,60 250,20 T 450,60 T 900,60 T 1200,40" />
                             </defs>
                             <text fill="#458DC8" fontSize={size} fontWeight="500" textAnchor={anchor}>
-                                <textPath
-                                    href="#wavePath"
-                                    startOffset={headerOffset}
-                                >
+                                <textPath href="#wavePath" startOffset="0%">
                                     Hər Yeni Bilgi Səni Bir Addım Daha Özünə Yaxınlaşdırır
+                                    <animate
+                                        attributeName="startOffset"
+                                        values="0%;100%;0%"
+                                        keyTimes="0;0.5;1"
+                                        dur="10s"
+                                        repeatCount="indefinite"
+                                    />
                                 </textPath>
                             </text>
                         </svg>
