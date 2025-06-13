@@ -141,13 +141,13 @@ function FormInput() {
                     data-aos="fade-left"
                     data-aos-delay="300"
                 >
-                    <div className="col-2 col-md-12">
+                    <div className="col-2 col-md-12 col-sm-12 col-xs-12">
                         <div className="image">
                             <h2>Təhsildə Zəmanət, Gələcəkdə Uğur!</h2>
                             <img src={image} alt="decoration" />
                         </div>
                     </div>
-                    <div className="col-9 col-md-12">
+                    <div className="col-9 col-md-12 col-sm-12 col-xs-12">
                         <div className="content">
                             <h2>Təhsildə Zəmanət, Gələcəkdə Uğur!</h2>
                             <p>
