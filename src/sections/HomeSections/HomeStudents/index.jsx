@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import './index.scss';
 import StudentCard from "../../../components/UserComponents/StudentCard/index.jsx";
-import back from "/src/assets/background.png";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
+import desktopBack     from "/src/assets/background.png";
+import mobileBackDefault  from "/src/assets/mobile-default.png";
+import mobileBackExpanded from "/src/assets/mobile-expanded.png";
 
 const students = Array(8).fill(0); // replace with actual data
 
@@ -35,7 +37,15 @@ function HomeStudents() {
     const showLess = () => {
         setVisibleCount(4);
     };
-
+    const baseHeight = 220;
+    const backHeight = isMobile
+        ? `${baseHeight * (visibleCount / 4)}px`
+        : 'auto';
+    const backImageSrc = !isMobile
+        ? desktopBack
+        : visibleCount > 4
+            ? mobileBackExpanded
+            : mobileBackDefault;
     return (
         <div id="home-student">
             <div className="container">
@@ -79,8 +89,8 @@ function HomeStudents() {
                         </div>
                     )}
 
-                    <div className="back">
-                        <img src={back} alt="background" />
+                    <div className="back" style={{ height: backHeight }}>
+                        <img src={backImageSrc} alt="background" />
                     </div>
                 </div>
             </div>

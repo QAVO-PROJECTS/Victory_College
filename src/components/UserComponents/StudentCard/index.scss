@@ -28,6 +28,9 @@
       font-weight: 500;
       line-height: normal;
       text-transform: capitalize;
+      @media screen and (max-width: 576px){
+        font-size: 12px;
+      }
     }
     p{
       color: var(--Black-75, rgba(62, 50, 50, 0.75));
@@ -38,6 +41,9 @@
       font-weight: 400;
       line-height: normal;
       text-transform: capitalize;
+      @media screen and (max-width: 576px){
+        font-size: 12px;
+      }
     }
   }
 }
