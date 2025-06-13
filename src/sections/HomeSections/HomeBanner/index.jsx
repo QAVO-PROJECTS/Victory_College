@@ -2,7 +2,7 @@ import './index.scss'
 import ellips from "/src/assets/Ellipse1.png"
 import poster from '/src/assets/Rectangle 20.png'  // slider-dən çəkdiyin screenshot
 import {useEffect, useState} from "react";
-
+import video from "/src/assets/1422633-hd_1920_810_24fps.mp4"
 function HomeBanner() {
     const [playing, setPlaying] = useState(false)
     const [isMobile, setIsMobile] = useState(false);
@@ -134,7 +134,7 @@ function HomeBanner() {
                     {playing
                          ? <video
                                  className="video-player"
-                                 src="/src/assets/1422633-hd_1920_810_24fps.mp4"
+                                 src={video}
                                  controls
                                  autoPlay
                                  onEnded={() => setPlaying(false)}
