@@ -50,9 +50,15 @@
       font-style: normal;
       font-weight: 500;
       line-height: 27px; /* 168.75% */
+      transition: all .3s ease-in-out;
       @media screen and (max-width: 576px){
        width: 100%;
         font-size: 14px;
+      }
+      &:hover{
+        border: 1px solid #2A71F8;
+        background: white;
+        color: #2A71F8;
       }
     }
   }
