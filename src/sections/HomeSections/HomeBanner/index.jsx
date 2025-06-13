@@ -12,7 +12,7 @@ function HomeBanner() {
     useEffect(() => {
         gsap.to(textPathRef.current, {
             attr: { startOffset: "100%" },
-            duration: 8,      // 0→100% üçün 5s
+            duration: 1,      // 0→100% üçün 5s
             ease: "none",
             repeat: -1,       // limitsiz təkrarlama
             yoyo: true        // hər dövrdən sonra irəli→geri
