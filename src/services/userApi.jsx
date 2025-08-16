@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 export const userApi = createApi({
     reducerPath: 'userApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://victoryweb-001-site1.ptempurl.com/api',
+        baseUrl: 'https://victory-back-production.up.railway.app/api',
         prepareHeaders: (headers) => {
             const token = Cookies.get('victoryToken');
             if (token) {
